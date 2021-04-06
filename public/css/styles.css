@@ -1,3 +1,7 @@
+body {
+    background-color:#1abc9c;
+}
+
 .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -33,3 +37,4 @@
 	font-size: 12px;
   color: #fff;
 }
+
