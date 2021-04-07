@@ -21,9 +21,8 @@ var posts = [];
 app.get("/",function(req,res){
   res.render("home",{
     startingContent:homeStartingContent,
-    postContent:posts
+    posts: posts   
   });
-
 });
 
 app.get("/about", function(req,res){
@@ -49,7 +48,21 @@ app.post("/compose",function(req,res){
   
 });
 
+app.get("/posts/:postName", function(req,res){
+  
+  const requestedTitle = req.params.postName;
 
+  posts.forEach(function(post){
+    const storedTitle = post.title;
+
+  if(storedTitle === requestedTitle){
+    console.log("Match founded!");
+}
+else {
+    console.log ("Not Founded!")
+}
+});
+});
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
